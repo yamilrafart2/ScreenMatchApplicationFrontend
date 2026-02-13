@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+    --color-fondo-inicio: #000000;
+    --color-fondo-medio: #04254f;
+    --color-fondo-final: #409ecd;
+    --color-texto: #FFFFFF;
+    --color-gris-texto: #62717a;
+    --color-input-bg: #f2f2f2;
+    
+    --fuente-principal: 'Inter', sans-serif;
+}
+
+/* 1. Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. Estilos Generales */
+body {
+    background: linear-gradient(180.61deg,
+            var(--color-fondo-inicio) 25.16%,
+            var(--color-fondo-medio) 80%,
+            var(--color-fondo-final) 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /* Mantiene el fondo fijo al hacer scroll */
+    min-height: 100vh;
+    
+    font-family: var(--fuente-principal);
+    color: var(--color-texto);
+}
+
+/* 3. Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 3em;
+}
+
+/* Bloque izquierdo: Logo + Título + Filtro */
+.header__contenedor {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.header__contenedor__logo {
+    width: 150px;
+    height: auto; /* Mantiene proporción */
+}
+
+/* Oculta el H1 porque el logo ya dice el nombre */
+.header__contenedor h1 {
+    display: none;
+}
+
+/* Estilo del Select (Filtro) */
+.header__contenedor__filtro {
+    background-color: black;
+    color: var(--color-texto);
+    font-size: 1rem; /* Ajustado para mejor lectura (aprox 16px) */
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Bloque derecho: Navegación */
+.header__navegacion {
+    display: flex;
+    gap: 1.5em;
+    align-items: center;
+}
+
+.header__navegacion__enlace {
+    text-decoration: none;
+    color: var(--color-texto);
+    display: flex; /* Centra los iconos */
+    transition: transform 0.2s;
+}
+
+.header__navegacion__enlace:hover {
+    transform: scale(1.1);
+}
+
+.material-symbols-outlined {
+    font-size: 2rem; /* aprox 32px */
+}
+
+/* 4. Main y Secciones */
+.principal {
+    padding: 0 3em;
+}
+
+.principal__seccion {
+    margin: 1em 0 3em 0;
+}
+
+.principal__seccion__titulo {
+    color: var(--color-texto);
+    margin-bottom: 1em;
+    font-size: 1.5rem;
+}
+
+/* 5. Grilla de Películas (Grid Layout) */
+.principal__seccion__grilla {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Columnas automáticas y responsivas */
+    gap: 1.5em;
+    list-style: none;
+}
+
+/* Estado oculto (para filtros) */
+.principal__seccion--oculta {
+    display: none;
+}
+
+/* 6. Estilos de Tarjetas */
+.tarjeta {
+    width: 100%;
+}
+
+.tarjeta__poster {
+    width: 100%;
+    aspect-ratio: 2/3; /* Proporción estándar de póster */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.tarjeta__poster:hover {
+    transform: scale(1.05);
+}
+
+/* 7. Responsividad */
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 1em;
+        padding: 1em;
+    }
+    
+    .header__contenedor {
+        flex-direction: column;
+    }
+
+    .principal {
+        padding: 0 1em;
+    }
+}
