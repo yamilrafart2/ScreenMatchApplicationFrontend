@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es-AR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ScreenMatch</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+
+    <body>
+        <header class="header">
+            <div class="header__contenedor">
+                <img class="header__contenedor__logo" src="./img/logo.png" alt="Logo ScreenMatch" />
+                <h1>Screen Match</h1>
+
+                <select class="header__contenedor__filtro" data-categorias>
+                    <option value="todos">Categorías</option>
+                    <option value="comedia">Comedia</option>
+                    <option value="acción">Acción</option>
+                    <option value="crimen">Crimen</option>
+                    <option value="drama">Drama</option>
+                    <option value="aventura">Aventura</option>
+                </select>
+            </div>
+
+            <nav class="header__navegacion">
+                <a href="#" class="header__navegacion__enlace" aria-label="Buscar">
+                    <span class="material-symbols-outlined">search</span>
+                </a>
+
+                <a href="#" class="header__navegacion__enlace" aria-label="Notificaciones">
+                    <span class="material-symbols-outlined">notifications</span>
+                </a>
+
+                <a href="#" class="header__navegacion__enlace" aria-label="Perfil">
+                    <span class="material-symbols-outlined">account_circle</span>
+                </a>
+            </nav>
+        </header>
+
+        <main class="principal">
+            <section class="principal__seccion" data-name="lanzamientos">
+                <h2 class="principal__seccion__titulo">Lanzamientos en ScreenMatch</h2>
+                <ul class="principal__seccion__grilla"></ul>
+            </section>
+
+            <section class="principal__seccion" data-name="top5">
+                <h2 class="principal__seccion__titulo">Títulos populares</h2>
+                <ul class="principal__seccion__grilla"></ul>
+            </section>
+
+            <section class="principal__seccion" data-name="series">
+                <h2 class="principal__seccion__titulo">Todos los títulos</h2>
+                <ul class="principal__seccion__grilla"></ul>
+            </section>
+
+            <section class="principal__seccion principal__seccion--oculta" data-name="categoria">
+                <h2 class="principal__seccion__titulo">Resultados de la búsqueda</h2>
+                <ul class="principal__seccion__grilla"></ul>
+            </section>
+        </main>
+        
+        <script src="./scripts/index.js" type="module"></script>
+    </body>
+</html>
