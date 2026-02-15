@@ -166,27 +166,21 @@ body {
     min-height: 100vh;
 }
 
-.detalle__descripcion img {
-    margin: 0 3em 2em 0;
-}
-
 .detalle__descripcion {
     display: flex;
+    margin-bottom: 3em; /* Separación extra entre descripción y selector */
+}
+
+.detalle__descripcion img {
+    margin: 0 3em 2em 0;
+    width: 300px; /* Asegura un tamaño de imagen estable */
+    border-radius: 10px;
 }
 
 .detalle__descripcion div {
     display: flex;
     flex-direction: column;
-    gap: 3em;
-}
-
-.detalle__episodios ul {
-    height: 25vh;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    flex-wrap: wrap;
-    list-style-type: none;
+    gap: 1.5em; /* Ajustado para que no esté tan disperso */
 }
 
 .detalle h2 {
@@ -195,26 +189,67 @@ body {
 
 .detalle p {
     font-size: 22px;
+    line-height: 1.4;
 }
 
-.detalle__temporadas__select,
-.detalle__temporadas__select option {
-    font-size: 24px;
-    padding: 0 1em;
-    margin-bottom: 1em;
+/* --- SECCIÓN SELECTOR DE TEMPORADAS --- */
+.detalle__temporadas {
+    margin-bottom: 2em; /* Separa el selector de la lista de episodios */
+}
+
+.detalle__temporadas__titulo {
+    font-size: 1.5rem;
+    margin-bottom: 0.5em;
 }
 
 .detalle__temporadas__select {
+    /* CORRECCIONES DEL SELECT: */
+    width: auto;         /* Deja que crezca según el texto */
+    min-width: 250px;    /* Pero que no sea menor a esto */
+    background-color: #f2f2f2; /* Fondo claro para contraste */
+    color: #333;         /* Texto oscuro para contraste */
+    cursor: pointer;
+    
     border-radius: 24px;
     border: none;
     outline: none;
-    width: 10%;
+    
+    font-size: 20px;     /* Ligeramente más pequeño para que entre bien */
+    padding: 0.5em 2em;
+    margin-bottom: 1em;
+}
+
+/* --- LISTA DE EPISODIOS --- */
+.detalle__episodios ul {
+    height: 35vh; /* Un poco más alto para que entren mejor */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1.5em; /* Más separación entre episodios */
+    list-style-type: none;
+    padding-bottom: 1rem;
+    padding-left: 0.5em;
+    padding-top: 1rem;
+}
+
+.detalle__episodios li {
+    font-size: 18px;
+    width: 45%; /* Define un ancho para que las columnas se formen bien */
 }
 
 @media screen and (max-width: 900px) {
-
     .detalle__descripcion,
     .detalle__episodios ul {
         display: block;
+        height: auto; /* En móvil quitamos la altura fija */
+    }
+    
+    .detalle__temporadas__select {
+        width: 100%;
+    }
+    
+    .detalle__episodios li {
+        width: 100%;
+        margin-bottom: 1em;
     }
 }
