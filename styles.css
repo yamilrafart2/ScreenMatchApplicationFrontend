@@ -109,9 +109,15 @@ body {
 /* 5. Grilla de Películas (Grid Layout) */
 .principal__seccion__grilla {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Columnas automáticas y responsivas */
-    gap: 1.5em;
+    /* auto-fill: Crea columnas "fantasmas" a la derecha si sobra espacio.
+       minmax(200px, 1fr): Las tarjetas medirán mínimo 200px. */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    
+    gap: 2em; /* Un poco más de espacio entre tarjetas */
     list-style: none;
+    
+    /* IMPORTANTE: Borramos el 'justify-content: center' 
+       para que se llenen de izquierda a derecha ordenadamente */
 }
 
 /* Estado oculto (para filtros) */
